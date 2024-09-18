@@ -11,7 +11,7 @@ import {
   removeCartItem,
 } from "../redux/reducer/cartReducer";
 import { CartReducerInitialState } from "../types/reducer-types";
-import { CartItem } from "../types/types";
+import { CartItemTypes } from "../types/types";
 import axios from "axios";
 import { server } from "../redux/store";
 
@@ -26,7 +26,7 @@ const Cart = () => {
   const [couponCode, setCouponCode] = useState<string>("");
   const [isValidCouponCode, setIsValidCouponCode] = useState<boolean>(false);
 
-  const incrementHandler = (cartItem: CartItem) => {
+  const incrementHandler = (cartItem: CartItemTypes) => {
     if (cartItem.quantity >= cartItem.stock)
       return toast.success("Out of stock");
     dispatch(addToCart({ ...cartItem, quantity: cartItem.quantity + 1 }));

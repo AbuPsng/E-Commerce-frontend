@@ -1,5 +1,5 @@
 import { FaPlus } from "react-icons/fa";
-import { CartItem } from "../types/types";
+import { CartItemTypes } from "../types/types";
 
 type productProps = {
   productId: string;
@@ -7,7 +7,7 @@ type productProps = {
   photo: string;
   price: number;
   stock: number;
-  handler: (cartItem: CartItem) => string | undefined;
+  handler: (cartItem: CartItemTypes) => string | undefined;
 };
 
 const server = import.meta.env.VITE_IMAGES_SERVER;

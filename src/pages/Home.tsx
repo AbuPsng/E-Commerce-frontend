@@ -4,14 +4,14 @@ import { useLatestProductQuery } from "../redux/api/productApi";
 import toast from "react-hot-toast";
 import { Skeleton } from "../component/Loader";
 import { useDispatch } from "react-redux";
-import { CartItem } from "../types/types";
+import { CartItemTypes } from "../types/types";
 import { addToCart } from "../redux/reducer/cartReducer";
 
 const Home = () => {
   const { data, isLoading, isError } = useLatestProductQuery("");
   const dispatch = useDispatch();
 
-  const addToCartHandler = (cartItem: CartItem) => {
+  const addToCartHandler = (cartItem: CartItemTypes) => {
     if (cartItem.stock < 1) return toast.error("Out of Stock");
 
     dispatch(addToCart(cartItem));
