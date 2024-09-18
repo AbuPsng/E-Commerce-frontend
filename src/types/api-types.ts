@@ -1,6 +1,6 @@
 import {
   Bar,
-  CartItem,
+  CartItemTypes,
   Line,
   Order,
   Pie,
@@ -112,7 +112,7 @@ export type DeleteProductsRequest = {
 
 export type NewOrderRequest = {
   shippingInfo: ShippingInfo;
-  orderItems: CartItem[];
+  orderItems: CartItemTypes[];
   subtotal: number;
   tax: number;
   shippingCharges: number;

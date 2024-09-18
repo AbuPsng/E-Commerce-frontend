@@ -4,8 +4,8 @@ import { CartItemTypes } from "../types/types";
 
 type CartItemProps = {
   cartItem: CartItemTypes;
-  incrementHandler: (cartItem: CartItem) => void;
-  decrementHandler: (cartItem: CartItem) => void;
+  incrementHandler: (cartItem: CartItemTypes) => void;
+  decrementHandler: (cartItem: CartItemTypes) => void;
   removeHandler: (id: string) => void;
 };
 
@@ -19,7 +19,7 @@ const CartItem = ({
 
   return (
     <div className="cart-item">
-      <img src={`http://localhost:3000/${photo}`} alt={name} />
+      <img src={`${import.meta.env.VITE_IMAGES_SERVER}${photo}`} alt={name} />
       <article>
         <Link to={`/product/${productId}`}>{name}</Link>
         <span>₹{price}</span>

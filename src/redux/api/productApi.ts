@@ -3,6 +3,7 @@ import {
   AllCategoriesResponse,
   AllProductsResponse,
   DeleteProductsRequest,
+  MessageResponse,
   newProductsRequest,
   ProductsResponse,
   SearchProductsRequest,
@@ -56,7 +57,7 @@ export const productApi = createApi({
       query: (id: string) => id,
       providesTags: ["product"],
     }),
-    newProduct: builder.mutation<ProductsResponse, newProductsRequest>({
+    newProduct: builder.mutation<MessageResponse, newProductsRequest>({
       query: ({ formData, id }) => ({
         url: `new?id=${id}`,
         method: "POST",

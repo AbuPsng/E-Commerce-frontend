@@ -32,7 +32,7 @@ const Cart = () => {
     dispatch(addToCart({ ...cartItem, quantity: cartItem.quantity + 1 }));
   };
 
-  const decrementHandler = (cartItem: CartItem) => {
+  const decrementHandler = (cartItem: CartItemTypes) => {
     if (cartItem.quantity <= 1) {
       toast.success("Item has been removed");
       return removeHandler(cartItem.productId);

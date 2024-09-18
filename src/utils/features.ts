@@ -10,7 +10,6 @@ type ResType =
       data: MessageResponse;
     }
   | {
-      data?: undefined;
       error: FetchBaseQueryError | SerializedError;
     };
 
