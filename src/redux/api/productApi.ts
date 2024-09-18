@@ -65,7 +65,7 @@ export const productApi = createApi({
       }),
       invalidatesTags: ["product"],
     }),
-    updateProduct: builder.mutation<ProductsResponse, UpdateProductsRequest>({
+    updateProduct: builder.mutation<MessageResponse, UpdateProductsRequest>({
       query: ({ formData, userId, productId }) => ({
         url: `${productId}?id=${userId}`,
         method: "PUT",
