@@ -59,13 +59,13 @@ const CheckoutForm = () => {
       user: user!._id,
     };
 
-    console.log(orderData);
-
     console.log(elements, "element");
 
     const { paymentIntent, error } = await stripe.confirmPayment({
       elements,
-      confirmParams: { return_url: "http://localhost:5173/orders" },
+      confirmParams: {
+        return_url: `${import.meta.env.VITE_FRONTEND_SERVER}/orders`,
+      },
       redirect: "if_required",
     });
 
@@ -103,8 +103,6 @@ const CheckoutForm = () => {
 
 const Checkout = () => {
   const location = useLocation();
-
-  console.log(location);
 
   const clientSecret: string | undefined = location.state;
 
